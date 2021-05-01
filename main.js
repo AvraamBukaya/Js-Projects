@@ -1,6 +1,4 @@
-
-
-
+//Declaration of variables 
 const box1 =  document.querySelector('.first_box');
 const box2 =  document.querySelector('.second_box');
 const box3 =  document.querySelector('.third_box');
@@ -9,33 +7,28 @@ const messageToUser = document.querySelector('.message-to-user');
 const boxes = [box2,box3,box4];
 const scoreScope = document.querySelector('.scores-scope');
 const scores = document.querySelector('#score');
+const width = document.body.clientWidth-100;
+const height = document.body.clientHeight-100;
 
 
-// const intervalID = setInterval(() => {
-//     scores.textContent = parseInt(scores.textContent)-2;
-//     messageToUser.textContent = `You Just loose ${2} scores! Hurry Up`;
-//     messageToUser.style.display= 'block';
-// }, 3000);
-setInterval(motionOfBox(boxes),1000);
 
 function motionOfBox(boxes){
- const width = document.body.clientWidt-100;
- const height = document.body.clientHeight-100;
+   
  let x,y;
  
  for(box of boxes){
    
     x =  Math.floor(Math.random()*width);
     y = Math.floor(Math.random()*height);
-    Velocity(box,'jello',{duration:500});
-    Velocity(box,{left:x,top:y},{duration:200});
+    // Velocity(box,'jello',{duration: 1500, easing: "spring" });
+    Velocity(box,{left:x,top:y},{duration:4000});
 
  }
 
 
 }
 
-
+setInterval(motionOfBox(boxes),500);
 
 
 
